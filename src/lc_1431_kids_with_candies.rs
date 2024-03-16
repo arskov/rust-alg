@@ -5,7 +5,7 @@ pub fn kids_with_candies(candies: Vec<i32>, extra_candies: i32) -> Vec<bool> {
 
 #[cfg(test)]
 mod tests {
-    use crate::lc_1431_kids_with_candies::kids_with_candies;
+    use super::kids_with_candies;
 
     #[test]
     fn kids_with_candies_test() {
