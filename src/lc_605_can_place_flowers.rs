@@ -28,5 +28,11 @@ mod tests {
     fn can_place_flowers_test() {
         let input = vec![1, 0, 0, 0, 1];
         assert_eq!(true, can_place_flowers(input, 1));
+        let input = vec![1, 0, 0, 0, 1];
+        assert_eq!(false, can_place_flowers(input, 2));
+        let input = vec![1, 0, 0, 0, 1, 0, 0];
+        assert_eq!(true, can_place_flowers(input, 2));
+        let input = vec![0];
+        assert_eq!(true, can_place_flowers(input, 1));
     }
 }
