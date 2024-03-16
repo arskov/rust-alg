@@ -4,3 +4,4 @@ The repository is dedicated to providing solutions for a wide array of coding ch
 
 1. [Can Place Flowers](src/lc_605_can_place_flowers.rs)
 2. [Kids With the Greatest Number of Candies](src/lc_1431_kids_with_candies.rs)
+3. [Greatest Common Divisor of Strings](src/lc_1071_common_divisor_strings.rs)
