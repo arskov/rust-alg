@@ -9,3 +9,4 @@ The repository is dedicated to providing solutions for a wide array of coding ch
 5. [Reverse Vowels of a String](src/lc_345_reverse_vowels_string.rs)
 6. [Reverse Words in a String](src/lc_151_reverse_words_string.rs)
 7. [Product of Array Except Self](src/lc_238_product_array_exept_self.rs)
+8. [Increasing Triplet Subsequence](src/lc_334_increased_triple_sequence.rs)
