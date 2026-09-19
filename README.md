@@ -1,12 +1,48 @@
-# Coding Challenges and Solutions (Rust)
+# Rust Algorithm Practice
 
-The repository is dedicated to providing solutions for a wide array of coding challenges and problems, similar to those found on platforms like LeetCode, HackerRank, and others. This repository is an invaluable resource for anyone looking to enhance their coding skills, prepare for technical interviews, or simply engage in the art of problem-solving using programming.
+Each LeetCode problem lives in a separate file in `tests/`. Cargo discovers these files automatically; no `main()` or module registration is needed. `src/lib.rs` is intentionally empty apart from a comment.
 
-1. [Can Place Flowers](src/lc_605_can_place_flowers.rs)
-2. [Kids With the Greatest Number of Candies](src/lc_1431_kids_with_candies.rs)
-3. [Greatest Common Divisor of Strings](src/lc_1071_common_divisor_strings.rs)
-4. [Merge Strings Alternately](src/lc_1768_merge_strings_alternately.rs)
-5. [Reverse Vowels of a String](src/lc_345_reverse_vowels_string.rs)
-6. [Reverse Words in a String](src/lc_151_reverse_words_string.rs)
-7. [Product of Array Except Self](src/lc_238_product_array_exept_self.rs)
-8. [Increasing Triplet Subsequence](src/lc_334_increased_triple_sequence.rs)
+## Running solutions
+
+```sh
+cargo test
+cargo test --test lc_37_sudoku_solver
+cargo test --test lc_1268_word_suggestion_system shared_prefixes_are_sorted_and_limited_to_three
+cargo test --test lc_37_sudoku_solver -- --nocapture
+```
+
+## Adding a problem
+
+Create `tests/lc_<number>_<name>.rs`:
+
+```rust
+struct Solution;
+
+// Paste the LeetCode submission here, including imports and helper types.
+impl Solution {
+    pub fn example(value: i32) -> i32 {
+        value
+    }
+}
+
+#[test]
+fn example_case() {
+    assert_eq!(Solution::example(42), 42);
+}
+```
+
+Each file has its own namespace, so `Solution` and helper names can be reused. When submitting to LeetCode, copy the implementation and any required constants, imports, and helpers; leave out the local `struct Solution;`, tests, and types LeetCode already provides (such as `ListNode`).
+
+## Problems
+
+- [23: merge k sorted lists](tests/lc_23_merge_k_sorted_lists.rs)
+- [37: sudoku solver](tests/lc_37_sudoku_solver.rs)
+- [151: reverse words string](tests/lc_151_reverse_words_string.rs)
+- [238: product array exept self](tests/lc_238_product_array_exept_self.rs)
+- [334: increased triple sequence](tests/lc_334_increased_triple_sequence.rs)
+- [345: reverse vowels string](tests/lc_345_reverse_vowels_string.rs)
+- [605: can place flowers](tests/lc_605_can_place_flowers.rs)
+- [1071: common divisor strings](tests/lc_1071_common_divisor_strings.rs)
+- [1268: word suggestion system](tests/lc_1268_word_suggestion_system.rs)
+- [1431: kids with candies](tests/lc_1431_kids_with_candies.rs)
+- [1768: merge strings alternately](tests/lc_1768_merge_strings_alternately.rs)
