@@ -40,6 +40,7 @@ Each file has its own namespace, so `Solution` and helper names can be reused. W
 - [37: sudoku solver](tests/lc_37_sudoku_solver.rs)
 - [151: reverse words string](tests/lc_151_reverse_words_string.rs)
 - [217: contains duplicate](tests/lc_217_contains_duplicate.rs)
+- [242: valid anagram](tests/lc_242_valid_anagram.rs)
 - [238: product array exept self](tests/lc_238_product_array_exept_self.rs)
 - [334: increased triple sequence](tests/lc_334_increased_triple_sequence.rs)
 - [345: reverse vowels string](tests/lc_345_reverse_vowels_string.rs)
