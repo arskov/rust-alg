@@ -3,16 +3,20 @@ struct Solution;
 impl Solution {
     pub fn product_except_self(nums: Vec<i32>) -> Vec<i32> {
         let sz = nums.len();
-        let mut fwd = vec![1; sz + 1];
-        let mut rev = vec![1; sz + 1];
+        let mut res = Vec::with_capacity(sz);
+        let mut prefix = 1;
+
         for i in 0..sz {
-            fwd[i + 1] = fwd[i] * nums[i];
-            rev[i + 1] = rev[i] * nums[sz - i - 1];
+            res.push(prefix);
+            prefix *= nums[i];
         }
-        let mut res = vec![1; sz];
-        for i in 0..sz {
-            res[i] = fwd[i] * rev[sz - i - 1];
+
+        prefix = 1;
+        for i in (0..sz).rev() {
+            res[i] *= prefix;
+            prefix *= nums[i];
         }
+
         res
     }
 }
