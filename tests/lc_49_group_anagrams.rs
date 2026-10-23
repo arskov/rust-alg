@@ -16,3 +16,42 @@ impl Solution {
         out.into_values().collect()
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::Solution;
+
+    fn words(values: &[&str]) -> Vec<String> {
+        values.iter().map(|word| (*word).to_string()).collect()
+    }
+
+    fn normalize(mut groups: Vec<Vec<String>>) -> Vec<Vec<String>> {
+        for group in &mut groups {
+            group.sort();
+        }
+        groups.sort();
+        groups
+    }
+
+    #[test]
+    fn groups_words_with_the_same_letters() {
+        let actual = Solution::group_anagrams(words(&[
+            "eat", "tea", "tan", "ate", "nat", "bat",
+        ]));
+        let expected = vec![
+            words(&["eat", "tea", "ate"]),
+            words(&["tan", "nat"]),
+            words(&["bat"]),
+        ];
+        assert_eq!(normalize(actual), normalize(expected));
+    }
+
+    #[test]
+    fn handles_empty_inputs_and_empty_strings() {
+        assert!(Solution::group_anagrams(vec![]).is_empty());
+        assert_eq!(
+            Solution::group_anagrams(vec![String::new()]),
+            vec![vec![String::new()]]
+        );
+    }
+}
