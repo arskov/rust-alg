@@ -13,3 +13,20 @@ impl Solution {
         max_profit
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::Solution;
+
+    #[test]
+    fn examples() {
+        assert_eq!(Solution::max_profit(vec![7, 1, 5, 3, 6, 4]), 5);
+        assert_eq!(Solution::max_profit(vec![7, 6, 4, 3, 1]), 0);
+    }
+
+    #[test]
+    fn handles_empty_and_single_day_inputs() {
+        assert_eq!(Solution::max_profit(vec![]), 0);
+        assert_eq!(Solution::max_profit(vec![5]), 0);
+    }
+}
