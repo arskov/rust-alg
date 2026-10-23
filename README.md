@@ -39,6 +39,7 @@ Each file has its own namespace, so `Solution` and helper names can be reused. W
 - [23: merge k sorted lists](tests/lc_23_merge_k_sorted_lists.rs)
 - [37: sudoku solver](tests/lc_37_sudoku_solver.rs)
 - [49: group anagrams](tests/lc_49_group_anagrams.rs)
+- [121: best time to buy and sell stock](tests/lc_121_best_time_to_buy_and_sell_stock.rs)
 - [128: longest consecutive sequence](tests/lc_128_longest_consecutive_sequence.rs)
 - [151: reverse words string](tests/lc_151_reverse_words_string.rs)
 - [217: contains duplicate](tests/lc_217_contains_duplicate.rs)
