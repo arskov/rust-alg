@@ -19,3 +19,21 @@ impl Solution {
         lookup.iter().all(|&count| count == 0)
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::Solution;
+
+    #[test]
+    fn recognizes_anagrams() {
+        assert!(Solution::is_anagram("anagram".into(), "nagaram".into()));
+        assert!(Solution::is_anagram("aabbcc".into(), "abcabc".into()));
+        assert!(Solution::is_anagram(String::new(), String::new()));
+    }
+
+    #[test]
+    fn rejects_different_characters_or_lengths() {
+        assert!(!Solution::is_anagram("rat".into(), "car".into()));
+        assert!(!Solution::is_anagram("ab".into(), "a".into()));
+    }
+}
