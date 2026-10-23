@@ -28,3 +28,31 @@ impl Solution {
             .collect()
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::Solution;
+
+    #[test]
+    fn returns_the_k_most_frequent_values() {
+        let mut result = Solution::top_k_frequent(vec![1, 1, 1, 2, 2, 3], 2);
+        result.sort_unstable();
+        assert_eq!(result, vec![1, 2]);
+
+        assert_eq!(Solution::top_k_frequent(vec![1], 1), vec![1]);
+    }
+
+    #[test]
+    fn any_values_at_the_frequency_tie_are_valid() {
+        let result = Solution::top_k_frequent(vec![4, 4, 1, 1, 2, 2], 2);
+        assert_eq!(result.len(), 2);
+        assert!(result.iter().all(|value| [1, 2, 4].contains(value)));
+        assert_ne!(result[0], result[1]);
+    }
+
+    #[test]
+    fn handles_empty_input_and_zero_k() {
+        assert!(Solution::top_k_frequent(vec![], 1).is_empty());
+        assert!(Solution::top_k_frequent(vec![1, 1], 0).is_empty());
+    }
+}
