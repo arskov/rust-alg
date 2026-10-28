@@ -13,11 +13,11 @@ impl Solution {
             if c1.is_none() && c2.is_none() {
                 break;
             }
-            if c1.is_some() {
-                out.push(c1.unwrap());
+            if let Some(a) = c1 {
+                out.push(a);
             }
-            if c2.is_some() {
-                out.push(c2.unwrap());
+            if let Some(a) = c2 {
+                out.push(a);
             }
         }
         out.to_string()
